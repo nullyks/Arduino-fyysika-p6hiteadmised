@@ -61,7 +61,7 @@ $\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}+...+\frac{1}{R_n}$
 **Omadused:**
 * Pinge on sama kõigis harudes.
 * Vool jaguneb harude vahel.
-* Kui üks komponent katkeb, jäävad teised tööle.
+* Kui üks haru katkeb, jäävad teised harud tööle.
 
 ### Näide: Kaks LED-i rööpühenduses
 Kui ühendame kaks LED-i paralleelselt Arduino 5V väljundiga, on pinge mõlemale LED-ile 5V.
