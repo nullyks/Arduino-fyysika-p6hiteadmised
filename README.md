@@ -24,12 +24,12 @@ Materjali edukalt läbinud õppija oskab:
 * makettplaadi juhtmed (isane-isane)
 
 ## Õppematerjali osad
-* Ohmi seadus
-* Võimsus
-* Vooluahelad
-* Multimeetri kasutamine
-* Vooluahelate skeemide koostamine ja simuleerimine
-* Iseseisvad ülesanded
+* [Ohmi seadus](materjalid/1_Ohmi_seadus.md)
+* [Võimsus](materjalid/2_võimsus.md)
+* [Vooluahelad](materjalid/3_vooluahelad.md)
+* [Multimeetri kasutamine](materjalid/4_multimeetri_kasutamine.md)
+* [Vooluahelate skeemide koostamine ja simuleerimine](materjalid/5_skeemide_koostamine_ja_simuleerimine.md)
+* [Iseseisvad ülesanded](materjalid/6_iseseisvad_ülesanded.md)
 
 ## Õppematerjali koostajad
 

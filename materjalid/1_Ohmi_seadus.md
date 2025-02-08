@@ -18,12 +18,12 @@ Seaduse järgi on voolutugevus juhis otseselt proportsionaalne pingega ja pöör
 
 Ohmi seadust saab kasutada ka teistes vormides sõltuvalt otsitavast suurusest:
 
-1. **Voolutugevuse arvutamine:** 
+**Voolutugevuse arvutamine:** 
 
 $$I = \frac{U}{R}$$
    
 
-2. **Takistuse arvutamine:** 
+**Takistuse arvutamine:** 
 
 $$R = \frac{U}{I}$$
 
