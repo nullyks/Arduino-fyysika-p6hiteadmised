@@ -41,6 +41,7 @@ Kui kasutame 220Ω takistit, saame voolutugevuse:
 $I = \frac{5V - 3.5V}{220\Omega} \approx 6.8mA$
 
 ![Jadaühenduse näide](meedia/jadaühendus.png)
+
 [Vaata Falstad simulatsioonikeskkonnas](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFcQqsBkJ8qVFGjZhCvJngH8+IkLwAmDAGYBDAK4AbAC5NdDFeCjmYkdlN5SlrWwtUadBoybOiosdgCUQsvJULDxKXjRUSF4wCGwA5uBCSuI0YVBsQA)
 
 ## Rööpühendus
@@ -74,4 +75,5 @@ Kogu vool on LED-ide voolude summa:
 $I_{kokku} = 14.7mA + 14.7mA \approx 29mA$
 
 ![rööpühenduse näide](meedia/rööpühendus.png)
+
 [Vaata Falstad simulatsioonikeskkonnas](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFEFFGuAyE+AqKMhswhXtNGDWvfoN4ATBgDMAhgFcANgBcmehqvDiqMSO2myR0qovCEqazbsPHT5y1FjsAJRAWe2JeJho8cDCLWiokXxgENgBzPnxopQRQ3ktObjtHYWdffkkAdyF7F3SosBiKqvlazKg2SpDWuQc2ju6YuWU2oA)
