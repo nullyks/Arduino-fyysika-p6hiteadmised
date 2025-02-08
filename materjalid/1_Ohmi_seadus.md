@@ -19,18 +19,16 @@ Seaduse järgi on voolutugevus juhis otseselt proportsionaalne pingega ja pöör
 Ohmi seadust saab kasutada ka teistes vormides sõltuvalt otsitavast suurusest:
 
 1. **Voolutugevuse arvutamine:** 
-   $$I = \frac{U}{R}$$
+$$I = \frac{U}{R}$$
    
 
 2. **Takistuse arvutamine:** 
-   $$R = \frac{U}{I}$$
+$$R = \frac{U}{I}$$
 
 
 ## Näide arvutamisest
 
 Kui vooluringis on takistus **100 Ω** ja sellele rakendatakse pinge **5 V**, siis voolutugevus on:
-
-
 $$I=\frac{5V}{100\Omega}=0.05 A$$
 
 
