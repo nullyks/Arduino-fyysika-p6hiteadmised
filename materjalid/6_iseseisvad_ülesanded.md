@@ -23,6 +23,7 @@ $R_3$ = 100 $\Omega$
 $U_{battery} = 5 V$
 
 ![Vooluskeem1](meedia/skeem1.png)
+
 [Abi ülesande lahendamiseks](https://www.youtube.com/watch?v=CRN5VQ86s94)
 
 ## Tulemuste kontrollimine simulatsiooni abil

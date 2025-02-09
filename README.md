@@ -13,7 +13,9 @@ Materjali edukalt läbinud õppija oskab:
 * koostada elementaarse dokumentatsiooni lihtsale seadmele.
 
 ## Hindamisjuhend
+Selle õppematerjali puhul ei rakendata eristavat hindamist.
 
+Õppija on materjali omandanud kui ta on iseseisvalt võimeline lahendama vähemalt neli iseseisvat üleannet viiest. 
 
 ## Vajalikud vahendid
 * 1 x personaalarvuti (sobib nii Windows, Linux kui macOS operatsioonisüsteem)
