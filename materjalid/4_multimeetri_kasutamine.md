@@ -1,6 +1,7 @@
 # Multimeetri kasutamine
 ![multimeeter](meedia/multimeeter.jpg)
-"Pilt: CCNull – Multimeter with probes on white. Allikas: https://ccnull.de/foto/multimeter-with-probes-on-white/1016421"
+*"Pilt: CCNull – Multimeter with probes on white. Allikas: https://ccnull.de/foto/multimeter-with-probes-on-white/1016421"*
+
 
 ## Ohutusnõuded
 * Enne mõõtmiste alustamist veendu, et mõõdetav komponent või vooluahel on õigesti valitud.
