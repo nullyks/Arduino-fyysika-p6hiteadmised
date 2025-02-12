@@ -1,7 +1,7 @@
 # Iseseisvad ülesanded
 
 ## Skeemi koostamine ja simuleerimine
-Koosta Tinkercad Circuits keskkonnas skeem, kus Arduino UNO digitaalse viiguga 2 ja maandusvuugu vahel on jadamisi ühendatud 100 $\Omega$ takisti, ja 3 punast LEDi. Digitaalse viigu 3 ja maandusviigu vahele ühenda paralleelselt 3 punast LEDi koos 100  $\Omega$ takistiga iga LEDi jaoks.
+Koosta Tinkercad Circuits keskkonnas skeem, kus Arduino UNO digitaalse viiguga 2 ja maandusviigu vahel on jadamisi ühendatud 100 $\Omega$ takisti, ja 3 punast LEDi. Digitaalse viigu 3 ja maandusviigu vahele ühenda paralleelselt 3 punast LEDi koos 100  $\Omega$ takistiga iga LEDi jaoks.
 Sea programmi abil viigud 2 ja 3 väljunditeks ja pane neile pinge 5V.
 
 Mida märkad LED-ide heleduse kohta?
@@ -9,6 +9,7 @@ Mida märkad LED-ide heleduse kohta?
 Selgita miks see nii on?
 
 ## Võimsuse arvutamine
+Vooluallika pinge on 9V. 
 Kasutaja peab jadamisi ühendatud vooluahelasse lisama 100 $\Omega$ takistust. Kas ta tohib lisada 100 $\Omega$ takisti, mille lubatud maksimumvõimsus on 1/4 W? Põhjenda oma vastust.
 
 ## Voolutugevuse arvutamine
