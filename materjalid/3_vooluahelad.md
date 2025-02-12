@@ -28,13 +28,13 @@ $R=R_1+R_2+...+R_n$
 * Kui üks komponent katkeb, lakkab kogu ahel töötamast.
 
 ### Näide: Kaks LED-i jadaühenduses
-Kui ühendame kaks LED-i järjestikku Arduino 5V väljundiga:
+Kui ühendame kaks LED-i järjestikku koos 220 $\Omega$ takistiga Arduino 5V väljundiga:
 
-$U_{kokku} = U_1 + U_2$
+$U_{LEDkokku} = U_1 + U_2$
 
-Kui iga LED vajab 1.75V, siis:
+220 $\Omega$ takisti puhul langeb ühele LED-ile pinge umbes 1.75V 
 
-$U_{kokku} = 1.75V + 1.75V = 3.5V$
+$U_{LEDkokku} = 1.75V + 1.75V = 3.5V$
 
 Kui kasutame 220Ω takistit, saame voolutugevuse:
 
@@ -64,15 +64,15 @@ $\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}+...+\frac{1}{R_n}$
 * Kui üks haru katkeb, jäävad teised harud tööle.
 
 ### Näide: Kaks LED-i rööpühenduses
-Kui ühendame kaks LED-i paralleelselt Arduino 5V väljundiga, on pinge mõlemale LED-ile 5V.
+Kui ühendame kaks LED-i koos takistitega paralleelselt Arduino 5V väljundiga, on pinge mõlemale LED-ile ja takistile (ühele harule) 5V.
 
-Kui iga LED vajab 1.75V ja kasutame 220Ω takistit iga LED-i juures:
+Kui ühe LEDi ja 220Ω takisti puhul langeb peale LEDi pinge 1.8V siis:
 
-$I = \frac{5V - 1.75V}{220\Omega} \approx 14.7mA$
+$I = \frac{5V - 1.8V}{220\Omega} \approx 14.5mA$
 
-Kogu vool on LED-ide voolude summa:
+Kogu vool on harude voolude summa:
 
-$I_{kokku} = 14.7mA + 14.7mA \approx 29mA$
+$I_{kokku} = 14.5mA + 14.5mA \approx 29mA$
 
 ![rööpühenduse näide](meedia/rööpühendus.png)
 
