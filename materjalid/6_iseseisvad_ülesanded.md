@@ -8,6 +8,8 @@ Mida märkad LED-ide heleduse kohta?
 
 Selgita miks see nii on?
 
+[lahendus](https://www.tinkercad.com/things/8zGRN6HQs58-jada-ja-paralleel?sharecode=sUe4epPX7jZkRs-jidc_gn9qJCQEKLKdaaUtXNu6EZ8)
+
 ## Võimsuse arvutamine
 Vooluallika pinge on 9V. 
 Kasutaja peab jadamisi ühendatud vooluahelasse lisama 100 $\Omega$ takistust. Kas ta tohib lisada 100 $\Omega$ takisti, mille lubatud maksimumvõimsus on 1/4 W? Põhjenda oma vastust.
@@ -23,13 +25,15 @@ $R_3$ = 100 $\Omega$
 
 $U_{battery} = 5 V$
 
-![Vooluskeem1](meedia/skeem1.png)
+![Vooluskeem](meedia/skeem1.png)
 
 [Abi ülesande lahendamiseks](https://www.youtube.com/watch?v=CRN5VQ86s94)
 
 ## Tulemuste kontrollimine simulatsiooni abil
 
 Loo joonisel kujutatud vooluring Falstad Circuit veebikeskkonnas. Kontrolli, kas simulaatori poolt arvutatud väärtused kinnitavad sinu saadud tulemusi.
+
+[Lahendus](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3EFsFEbNN1Z8whKOJpUkVGdARsATiDR5wYleBSqq2XIuX4DqjbrFUUafQPOHr-bGeSQ2AdyG81Rz87cbexww0fLxNBINd+QVMvaOCTB3c+WIieJMFU+zM2IA)
 
 ## Seadme dokumenteerimine ja loomine
 
@@ -46,3 +50,5 @@ Edasijõudnutele:
 [Potentsiomeetri kasutamise õpetus](https://docs.arduino.cc/learn/electronics/potentiometer-basics/)
 
 [map funktsiooni kasutamise õpetus](https://docs.arduino.cc/language-reference/en/functions/math/map/)
+
+[lahendus](https://www.tinkercad.com/things/ewlL0WmmW1u-neli-vahemikku?sharecode=fR5GdkA1JgncdNHTXewElXwrDL9GFkoGNkQaUZNIk9s)
