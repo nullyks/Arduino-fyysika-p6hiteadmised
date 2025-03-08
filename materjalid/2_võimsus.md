@@ -5,7 +5,7 @@ Elektroonikaseadmete juures on võimsus oluline parameeter, mis määrab ära, k
 Arduino rakendustes on oluline mõista, kuidas arvutada ja hallata alalisvoolu (ingl *direct current, DC*) võimsust, et vältida komponentide ülekuumenemist ja kahjustumist.
 
 Elektriahelates on võimsuse arvutamiseks üldine valem:
-### $P = U \times I$
+### $P = U  I$
 
 **kus:**
 * **P** – võimsus (vattides, W)

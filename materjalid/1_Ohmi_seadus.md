@@ -5,7 +5,7 @@ Ohmi seadus on üks elektrotehnika põhilisi seadusi, mis kirjeldab seost elektr
 ## Valem ja selgitus
 Ohmi seadus väljendub järgmiselt:
 
-### $U = I \cdot R$
+### $U = I R$
 
 **kus**:
 * **U** – pinge (voltides, V)
