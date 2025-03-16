@@ -77,3 +77,5 @@ $I_{kokku} = 14.5mA + 14.5mA \approx 29mA$
 ![rööpühenduse näide](meedia/rööpühendus.png)
 
 [Vaata Falstad simulatsioonikeskkonnas](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFEFFGuAyE+AqKMhswhXtNGDWvfoN4ATBgDMAhgFcANgBcmehqvDiqMSO2myR0qovCEqazbsPHT5y1FjsAJRAWe2JeJho8cDCLWiokXxgENgBzPnxopQRQ3ktObjtHYWdffkkAdyF7F3SosBiKqvlazKg2SpDWuQc2ju6YuWU2oA)
+
+Siin teemas kasutasime ühe näitekomponendina LED-i, mis on diood. Dioodidest räägime täpsemalt [selles õppematerjalis](https://github.com/nullyks/Arduino-baaselemendid/blob/main/materjalid/2_dioodid.md)

@@ -14,6 +14,8 @@ Selgita miks see nii on?
 Vooluallika pinge on 9V. 
 Kasutaja peab jadamisi ühendatud vooluahelasse lisama 100 $\Omega$ takistust. Kas ta tohib lisada 100 $\Omega$ takisti, mille lubatud maksimumvõimsus on 1/4 W? Põhjenda oma vastust.
 
+[Lahendus](meedia/vastus1.md)
+
 ## Voolutugevuse arvutamine
 Leia millise tugevusega vool läbib takisteid $R_1, R_2$ ja $R_3$ (iga takisti kohta eraldi).
 

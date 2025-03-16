@@ -34,6 +34,7 @@ Kui vooluringis on takistus **100 Ω** ja sellele rakendatakse pinge **5 V**, si
 
 $$I=\frac{5V}{100\Omega}=0.05 A$$
 
+Takistitest räägitakse täpsemalt [selles õppematerjalis](https://github.com/nullyks/Arduino-baaselemendid/blob/main/materjalid/1_takistid.md).
 
 ## Miks seda vaja teada on?
 * **Seadmed ja sensorid vajavad tööks kindla pingega voolu** - Arduino töötab tavaliselt 5V või 3.3V pingega, kuid erinevad komponendid, nagu LEDid, mootorid ja andurid, vajavad kindlat voolutugevust. Ilma Ohmi seadust rakendamata võib liiga suur vool neid komponente kahjustada.

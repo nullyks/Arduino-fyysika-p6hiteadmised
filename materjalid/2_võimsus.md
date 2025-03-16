@@ -25,6 +25,8 @@ $P = 5V \times 0.2A = 1W$
 
 See tähendab, et Arduino ja selle komponendid tarbivad 1 vati energiat.
 
+Arduino kasutamisest koos mootoritega räägitakse täpsemalt [selles õppematerjalis](https://github.com/nullyks/Arduino-mootorid-ja-toide)
+
 ## Üksikud komponendid ja võimsus
 ### Takisti
 Takisti tarbib vooluahelas energiat ja muundab selle soojuseks. Takisti poolt hajutatud soojusenergia võimsus arvutatakse:
