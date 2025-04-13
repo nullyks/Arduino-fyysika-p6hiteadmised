@@ -2,6 +2,9 @@
 
 Selles õppematerjalis korratakse üle teoreetilised ja praktilised füüsikateadmised, mis on olulised, et ühendada Arduino või mõne teise arendusplaadiga sensoreid ja aktuaatoreid, ning luua oma vooluahelaid. Samuti näidatakse, kuidas kasutada Falstad-i vooluahelate simuleerimise keskkonda [Falstad.com](https://falstad.com/circuit/circuitjs.html) ning [Fritzing tarkvara](https://fritzing.org/download/) skeemide koostamiseks.
 
+## Õpieesmärgid
+
+Peale selle materjalid läbimist oskad kasutada Ohmi seadust elementaarsete vooluarvutuste tegemiseks ning kasutada multimeetrit takistuse, pinge ja voolutugevuse mõõtmiseks. Samuti oskad teha vahet jada ja rööpühendusel. Lisaks saad teada, milliseid vahendeid kasutada jooniste tegemisel ja elektroonikasedmete simuleerimisel. 
 
 ## Õpiväljundid
 
