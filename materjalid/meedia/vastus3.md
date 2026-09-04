@@ -1,5 +1,29 @@
 # Potentsiomeetri asendi näidiku näidislahendus
 
+## Vajalikud komponendid
+
+Arduino UNO R3 või Arduino UNO R4 WiFi;
+makettplaat;
+neli LED-i;
+neli 470 Ω takistit;
+üks 10 kΩ lineaarne potentsiomeeter;
+üks surunupp;
+ühendusjuhtmed.
+
+## Funktsionaalsed nõuded
+
+Arduino käivitumisel on seade välja lülitatud ja kõik LED-id on kustunud.
+Üks nupuvajutus lülitab seadme sisse.
+Järgmine nupuvajutus lülitab seadme välja.
+Ühe füüsilise nupuvajutuse kohta tohib seadme olek muutuda ainult üks kord. Programmis tuleb arvestada nupu kontaktide võnkumisega.
+Kui seade on välja lülitatud, peavad kõik LED-id olema kustunud.
+Kui seade on sisse lülitatud, näitavad LED-id potentsiomeetri asendit tulpnäiduna:
+väärtusel 0–255 põleb üks LED;
+väärtusel 256–511 põleb kaks LED-i;
+väärtusel 512–767 põleb kolm LED-i;
+väärtusel 768–1023 põlevad kõik neli LED-i.
+Lahendus peab töötama nii Arduino UNO R3 kui ka UNO R4 WiFi plaadiga.
+
 ## Ühendused
 
 | Komponent | Arduino ühendus |
