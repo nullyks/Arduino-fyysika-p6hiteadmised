@@ -141,37 +141,6 @@ Esita tulemused tabelina:
 
 Loo Arduino UNO abil seade, mis näitab potentsiomeetri asendit nelja LED-iga. Seadet saab surunupu abil sisse ja välja lülitada.
 
-### Vajalikud komponendid
-
-* Arduino UNO R3 või Arduino UNO R4 WiFi;
-* makettplaat;
-* neli LED-i;
-* neli 470 Ω takistit;
-* üks 10 kΩ lineaarne potentsiomeeter;
-* üks surunupp;
-* ühendusjuhtmed.
-
-### Ühendused
-
-* Ühenda potentsiomeetri äärmised jalad 5 V ja GND viiguga ning keskmine jalg analoogsisendiga A0.
-* Ühenda neli LED-i eraldi 470 Ω takistite kaudu digitaalviikudega D2, D3, D4 ja D5.
-* Ühenda iga LED-i katood GND-ga.
-* Ühenda surunupp digitaalviigu D7 ja GND vahele. Kasuta programmis viigu D7 jaoks sisemist tõmbetakistit `INPUT_PULLUP`.
-
-### Funktsionaalsed nõuded
-
-1. Arduino käivitumisel on seade välja lülitatud ja kõik LED-id on kustunud.
-2. Üks nupuvajutus lülitab seadme sisse.
-3. Järgmine nupuvajutus lülitab seadme välja.
-4. Ühe füüsilise nupuvajutuse kohta tohib seadme olek muutuda ainult üks kord. Programmis tuleb arvestada nupu kontaktide võnkumisega.
-5. Kui seade on välja lülitatud, peavad kõik LED-id olema kustunud.
-6. Kui seade on sisse lülitatud, näitavad LED-id potentsiomeetri asendit tulpnäiduna:
-   * väärtusel 0–255 põleb üks LED;
-   * väärtusel 256–511 põleb kaks LED-i;
-   * väärtusel 512–767 põleb kolm LED-i;
-   * väärtusel 768–1023 põlevad kõik neli LED-i.
-7. Lahendus peab töötama nii Arduino UNO R3 kui ka UNO R4 WiFi plaadiga.
-
 ### Töö etapid
 
 1. Pane kirja seadme funktsionaalsed nõuded.
