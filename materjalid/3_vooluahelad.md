@@ -1,81 +1,108 @@
 # Vooluahelad
 
-**Elektriahel** (ingl *electrical circuit*) ehk **vooluahel** on aktiiv- ja passiivelementide kogum, milles võib kulgeda elektrivool.
-Elektriahela ühesuguse vooluga osa on **haru**.
-Vooluahel võib koosneda ühest või mitmest jada- ja rööpühenduses elementidega harust.
+Elektriahel ehk vooluahel koosneb omavahel ühendatud elektrilistest komponentidest ja juhtmetest. Voolu liikumiseks peab vooluahel olema suletud ning selles peab olema pingeallikas.
 
-**Jadaühendus** ehk järjestikühendus on elektriahela elementide niisugune ühendamisviis, mille puhul kõiki elemente läbib üks ja seesama vool; seega on voolutugevus kõigis elementides ühesuurune.
+Vooluahelas võivad olla näiteks:
 
-**Rööpühendus** ehk paralleelühendus on elektriahela elementide niisugune ühendamisviis, mille puhul kõigile elementidele on rakendatud üks ja seesama pinge.
+* pingeallikas, näiteks patarei või Arduino 5 V toiteviik;
+* tarbijad, näiteks LED-id, takistid ja mootorid;
+* ühendusjuhtmed;
+* lülitid ja muud juhtimiseks kasutatavad komponendid.
+
+**Vooluahela haru** on üks voolu liikumise tee kahe hargnemispunkti vahel. Ühe haru kõiki järjestikku ühendatud komponente läbib sama tugevusega vool.
+
+**Jadaühenduse** korral on komponendid ühendatud üksteise järel samasse harusse. Kõiki jadamisi ühendatud komponente läbib sama tugevusega vool.
+
+**Rööpühenduse** korral on komponendid või komponentide rühmad ühendatud eraldi harudesse. Kõigile rööbiti ühendatud harudele rakendub sama pinge.
+
+Vooluahel võib sisaldada korraga nii jada- kui ka rööpühendusi.
 
 ## Jadaühendus
 
-Jadamisi ühendatud elemente (1, 2, ... n) läbib ühetugevune vool:
+Jadamisi ühendatud komponendid asuvad samas harus ja neid läbib sama tugevusega vool:
 
-$I=I_1=I_2=...=I_n$
+$$I = I_1 = I_2 = \ldots = I_n$$
 
-Jadamisi ühendatud elementidele langevate pingete summa võrdub toitepingega:
+Komponentidele langevate pingete summa võrdub toitepingega:
 
-$U=U_1+U_2+...+U_n$
+$$U = U_1 + U_2 + \ldots + U_n$$
 
-Jadamisi ühendatud elementide kogutakistus on võrdne ahela elementide takistuste summaga:
+Jadamisi ühendatud takistite kogutakistus võrdub üksikute takistuste summaga:
 
-$R=R_1+R_2+...+R_n$
+$$R = R_1 + R_2 + \ldots + R_n$$
 
-**Omadused:**
-* Vool on sama kõigis komponentides.
-* Pinge jaguneb komponentide vahel.
-* Kui üks komponent katkeb, lakkab kogu ahel töötamast.
+Jadaühenduse omadused:
 
-### Näide: Kaks LED-i jadaühenduses
-Kui ühendame kaks LED-i järjestikku koos 220 $\Omega$ takistiga Arduino 5V väljundiga:
+* kõiki komponente läbib sama tugevusega vool;
+* toitepinge jaguneb komponentide vahel;
+* takistite lisamisel kogutakistus suureneb;
+* kui üks komponent või ühendus katkeb, lakkab kogu ahel töötamast.
 
-$U_{LEDkokku} = U_1 + U_2$
+### Näide: kaks LED-i jadaühenduses
 
-220 $\Omega$ takisti puhul langeb ühele LED-ile pinge umbes 1.75V 
+Simulatsiooninäites ühendatakse 5 V toiteallikaga jadamisi kaks punast LED-i ja 220 Ω takisti.
 
-$U_{LEDkokku} = 1.75V + 1.75V = 3.5V$
+Simulaatori kasutatud LED-i mudelis on ühe LED-i päripinge selle voolutugevuse juures ligikaudu 1,75 V. Kahe LED-i pingelang kokku on:
 
-Kui kasutame 220Ω takistit, saame voolutugevuse:
+$$U_{\mathrm{LED}} = 1{,}75\ \mathrm{V} + 1{,}75\ \mathrm{V} = 3{,}5\ \mathrm{V}$$
 
-$I = \frac{5V - 3.5V}{220\Omega} \approx 6.8mA$
+Takistile jääv pinge on:
 
-![Jadaühenduse näide](meedia/jadaühendus.png)
+$$U_R = 5\ \mathrm{V} - 3{,}5\ \mathrm{V} = 1{,}5\ \mathrm{V}$$
 
-[Vaata Falstad simulatsioonikeskkonnas](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFcQqsBkJ8qVFGjZhCvJngH8+IkLwAmDAGYBDAK4AbAC5NdDFeCjmYkdlN5SlrWwtUadBoybOiosdgCUQsvJULDxKXjRUSF4wCGwA5uBCSuI0YVBsQA)
+Ahelat läbiv voolutugevus on:
+
+$$I = \frac{1{,}5\ \mathrm{V}}{220\ \Omega} \approx 0{,}0068\ \mathrm{A} = 6{,}8\ \mathrm{mA}$$
+
+Arvutatud 6,8 mA vool läbib nii takistit kui ka mõlemat LED-i. See jääb alla [UNO R4 WiFi andmelehes](https://docs.arduino.cc/resources/datasheets/ABX00087-datasheet.pdf) märgitud 8 mA I/O-viigu voolupiiri.
+
+![Kahe LED-i ja takisti jadaühendus](meedia/jadaühendus.png)
+
+[Vaata jadaühendust Falstad Circuit Simulatoris](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFcQqsBkJ8qVFGjZhCvJngH8+IkLwAmDAGYBDAK4AbAC5NdDFeCjmYkdlN5SlrWwtUadBoybOiosdgCUQsvJULDxKXjRUSF4wCGwA5uBCSuI0YVBsQA)
 
 ## Rööpühendus
 
-Vool rööpahela mittehargnevas osas on võrdne ahela harusid läbivate voolude summaga:
+Rööbiti ühendatud harudele rakendub sama pinge:
 
-$I=I_1+I_2+...+I_n$
+$$U = U_1 = U_2 = \ldots = U_n$$
 
-Rööbiti ühendatud elementidele langeb ühsugune pinge:
+Ahela mittehargnevat osa läbiv koguvool võrdub harude voolude summaga:
 
-$U=U_1=U_2=...=U_n$
+$$I = I_1 + I_2 + \ldots + I_n$$
 
-Rööbiti ühnedatud elementide kogutakistuse pöördväärtus on võrdne elementide takistuste pöördväärtuste summaga
+Rööbiti ühendatud takistite kogutakistus arvutatakse valemiga:
 
-$\frac{1}{R}=\frac{1}{R_1}+\frac{1}{R_2}+...+\frac{1}{R_n}$
+$$\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots + \frac{1}{R_n}$$
 
-**Omadused:**
-* Pinge on sama kõigis harudes.
-* Vool jaguneb harude vahel.
-* Kui üks haru katkeb, jäävad teised harud tööle.
+Rööpühenduse omadused:
 
-### Näide: Kaks LED-i rööpühenduses
-Kui ühendame kaks LED-i koos takistitega paralleelselt Arduino 5V väljundiga, on pinge mõlemale LED-ile ja takistile (ühele harule) 5V.
+* kõigile harudele rakendub sama pinge;
+* koguvool jaguneb harude vahel;
+* uue rööpharu lisamisel kogutakistus väheneb;
+* ühe haru katkemisel saavad teised harud edasi töötada.
 
-Kui ühe LEDi ja 220Ω takisti puhul langeb peale LEDi pinge 1.8V siis:
+### Näide: kaks LED-i rööpühenduses
 
-$I = \frac{5V - 1.8V}{220\Omega} \approx 14.5mA$
+Simulatsiooninäites ühendatakse kaks LED-i eraldi rööpharudesse. Mõlemas harus on LED-iga jadamisi ühendatud oma 220 Ω takisti.
 
-Kogu vool on harude voolude summa:
+**Igal rööbiti ühendatud LED-il peab olema oma voolu piirav takisti.** Ühe ühise takisti kasutamisel ei pruugi vool LED-ide vahel võrdselt jaguneda.
 
-$I_{kokku} = 14.5mA + 14.5mA \approx 29mA$
+Mõlemale harule rakendub pinge 5 V. Kui ühe LED-i päripinge on simulaatori mudelis ligikaudu 1,8 V, siis ühe haru voolutugevus on:
 
-![rööpühenduse näide](meedia/rööpühendus.png)
+$$I_{\mathrm{haru}} = \frac{5\ \mathrm{V} - 1{,}8\ \mathrm{V}}{220\ \Omega} \approx 14{,}5\ \mathrm{mA}$$
 
-[Vaata Falstad simulatsioonikeskkonnas](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFEFFGuAyE+AqKMhswhXtNGDWvfoN4ATBgDMAhgFcANgBcmehqvDiqMSO2myR0qovCEqazbsPHT5y1FjsAJRAWe2JeJho8cDCLWiokXxgENgBzPnxopQRQ3ktObjtHYWdffkkAdyF7F3SosBiKqvlazKg2SpDWuQc2ju6YuWU2oA)
+Kahe ühesuguse haru koguvool on:
 
-Siin teemas kasutasime ühe näitekomponendina LED-i, mis on diood. Dioodidest räägime täpsemalt [selles õppematerjalis](https://github.com/nullyks/Arduino-baaselemendid/blob/main/materjalid/2_dioodid.md)
+$$I_{\mathrm{kokku}} = 14{,}5\ \mathrm{mA} + 14{,}5\ \mathrm{mA} \approx 29\ \mathrm{mA}$$
+
+Seda simulatsiooniahelat toidetakse 5 V toiteallikast, mitte Arduino I/O-viigust. Ligikaudu 29 mA koguvool ületab nii UNO R3 ühe I/O-viigu 20 mA piiri kui ka UNO R4 WiFi 8 mA piiri. Kui mõlemat LED-i soovitakse juhtida ühe Arduino viiguga, tuleb kasutada transistorit või muud sobivat draiverit.
+
+![Kahe LED-i rööpühendus, mõlemas harus eraldi takisti](meedia/rööpühendus.png)
+
+[Vaata rööpühendust Falstad Circuit Simulatoris](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgAncMFEFFGuAyE+AqKMhswhXtNGDWvfoN4ATBgDMAhgFcANgBcmehqvDiqMSO2myR0qovCEqazbsPHT5y1FjsAJRAWe2JeJho8cDCLWiokXxgENgBzPnxopQRQ3ktObjtHYWdffkkAdyF7F3SosBiKqvlazKg2SpDWuQc2ju6YuWU2oA)
+
+LED on diood. Dioodidest räägitakse täpsemalt [Arduino baaselementide õppematerjalis](https://github.com/nullyks/Arduino-baaselemendid/blob/main/materjalid/2_dioodid.md).
+
+---
+
+[Eelmine: elektrivõimsus](2_võimsus.md) · [Sisukord](README.md) · [Järgmine: multimeetri kasutamine](4_multimeetri_kasutamine.md)

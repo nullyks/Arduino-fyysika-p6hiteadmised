@@ -1,21 +1,44 @@
-Kontrollime, kas 100 Ω takisti, mille lubatud maksimumvõimsus on **1/4 W (0.25 W)**, suudab taluda vooluahelas tekkivat võimsust.
+# Takisti võimsuse ülesande lahendus
 
-### Arvutame voolutugevuse
-Kuna ahelas on ainult **üks 100 Ω takisti**, saame Ohmi seaduse põhjal arvutada voolu:
+**Antud:**
 
-$I = \frac{U}{R} = \frac{9V}{100Ω} = 0.09A = 90mA$
+* $U = 9\ \mathrm{V}$
+* $R = 100\ \Omega$
 
-### Arvutame takisti võimsuse
-Takisti poolt hajutatud võimsus arvutatakse valemiga:
+## 1. Voolutugevuse arvutamine
 
-$P = I^2 R$
+Ohmi seaduse järgi:
 
-$P = (0.09A)^2 \times 100Ω$
+$$I = \frac{U}{R}$$
 
-$P = 0.0081 \times 100 = 0.81W$
+$$I = \frac{9\ \mathrm{V}}{100\ \Omega} = 0{,}09\ \mathrm{A} = 90\ \mathrm{mA}$$
 
-### Võrdleme maksimaalset lubatud võimsust
-Takisti lubatud võimsus on **0.25 W**, kuid arvutatud hajutatud võimsus on **0.81 W**, mis on tunduvalt suurem kui takisti taluvus.
+Takistit läbib vool tugevusega 90 mA.
 
-### Järeldus
-**Kasutaja EI TOHI kasutada 100 Ω takistit võimsusega 1/4 W**, sest see ületab oluliselt takisti lubatud maksimumvõimsust ning võib põhjustada selle ülekuumenemise ja kahjustumise.
+## 2. Võimsuse arvutamine
+
+Arvutame võimsuse pinge ja voolutugevuse järgi:
+
+$$P = U \cdot I$$
+
+$$P = 9\ \mathrm{V} \cdot 0{,}09\ \mathrm{A} = 0{,}81\ \mathrm{W}$$
+
+Kontrollime tulemust teise valemiga:
+
+$$P = \frac{U^2}{R}$$
+
+$$P = \frac{(9\ \mathrm{V})^2}{100\ \Omega} = \frac{81}{100}\ \mathrm{W} = 0{,}81\ \mathrm{W}$$
+
+Mõlemad valemid annavad sama tulemuse: takistis hajub 0,81 W võimsust.
+
+## 3. Sobiva takisti valimine
+
+0,25 W takistit ei tohi selles ahelas kasutada, sest arvutatud 0,81 W ületab selle nimivõimsust rohkem kui kolm korda. Takisti kuumeneks tugevalt ja võiks kahjustuda.
+
+1 W takisti nimivõimsust arvutus otseselt ei ületa, kuid 0,81 W oleks selle jaoks pikaajalisel kasutamisel väga suur koormus. Mõistliku võimsusvaru jätmiseks valime vähemalt 2 W nimivõimsusega takisti.
+
+## Vastus
+
+Ahelat läbib vool tugevusega 90 mA ja takistis hajub 0,81 W võimsust. 0,25 W takisti ei sobi. Pikemaajaliseks kasutamiseks valime vähemalt 2 W takisti.
+
+**Ohutusmärkus:** see on arvutusülesanne. Sellist 90 mA koormust ei tohi ühendada Arduino I/O-viiguga.

@@ -1,52 +1,114 @@
-# Vooluringide skeemide koostamine ja simuleerimine
+# Vooluahelate skeemide koostamine ja simuleerimine
 
-Arendusplaatidega ühendatavate vooluringide planeerimisel on kasulik need eelnevalt üles joonistada. See aitab kaasa nii planeerimisele võimaldades märgata ja parandada vigu, kui ka hilisemale dokumenteerimisele, sest ükski elektroonikaprojekt pole täielik ilma joonisteta.
-Mitmed vahendid ja keskkonnad lubavad lisaks jooniste koostamisele ka vooluringide tööd simuleerida tehes ära vajalikud arvutused ja demonstreerides, kuidas vool vooluringis olevaid elemente läbib ja mis on selle tulemus. 
+Enne vooluahela füüsilist koostamist on kasulik teha ühendusjoonis või skeem. Joonis aitab planeerida komponentide paigutust, kontrollida ühendusi, leida vigu ning dokumenteerida valmis seadet.
 
-Kasulikud vahendid arendusplaatide jaoks jooniste tegemisel on:
+Ühendusjoonis näitab komponentide füüsilist paigutust ja juhtmete ühendamist. Elektriskeem kasutab komponentide tingmärke ning näitab eelkõige nende elektrilisi ühendusi. Simulatsioon võimaldab lisaks kontrollida, kuidas koostatud vooluahel mudeli järgi töötab.
 
-* [Fritzing tarkvara](https://fritzing.org/) - vabavaraline allalaetav tarkvara arendusplaatidega seotud jooniste tegemiseks. Tarkvara sisaldab paljusid levinud elektroonikakomponente ning võimaldab ka uusi komponente lisada. 
-* [Falstad Circuit Simulator](https://falstad.com/circuit/circuitjs.html) - veebipõhine keskkond elektroonikaskeemide simuleerimiseks. Ei ole otseselt mõeldud arendusplaatide jaoks. Samas sisaldab palju elektroonika baaselemente ning visualiseerib väga hästi vooluringide toimimist. 
-* [Tinkercad Circuits](https://www.tinkercad.com/dashboard/designs/circuits) - Autotesk poolt pakutav tasuta veebikeskkond, mis lubab visuaalselt koostada lihtsamaid Arduino ja Micro:bit arendusplaatidel põhinevaid seadmeid ja nende tööd ka simuleerida. Loodud projekte saab avalikustada ja teistega jagada.
+Selles õppematerjalis kasutatakse kolme tööriista:
+
+| Tööriist | Peamine kasutus | Simulatsioon |
+|---|---|---|
+| [Fritzing](https://fritzing.org/) | Makettplaadi ühendusjooniste, elektriskeemide ja trükkplaadi jooniste koostamine | Ei |
+| [Falstad Circuit Simulator](https://falstad.com/circuit/circuitjs.html) | Elektriskeemide koostamine ning pinge ja voolutugevuse jälgimine | Jah |
+| [Tinkercad Circuits](https://www.tinkercad.com/dashboard/designs/circuits) | Arduino UNO R3 ühenduste ja programmide koostamine ning katsetamine | Jah |
+
+Simulatsioon kasutab komponentide lihtsustatud mudeleid. Simulatsioonis töötav vooluahel ei pruugi päriselt koostatud ahelas samamoodi käituda. Enne füüsilise ahela ühendamist tuleb kontrollida komponentide polaarsust, pingeid, voolutugevusi ja võimsuspiire.
+
+Tinkercadi näidetes kasutatakse Arduino UNO R3 plaati. Füüsiliste ahelate korral tuleb arvestada, et UNO R4 WiFi ühe I/O-viigu voolupiir on UNO R3 piirist väiksem.
 
 ## Fritzing
-![Fritzing](meedia/Fritzing.png)
-*"Ekraanitõmmis Fritzing tarkvarast - H-sild L293D kiibi abil"*
 
-Fritzing on avatud lähtekoodiga tarkvara, mis on loodud elektroonikaprojektide disainimiseks ja dokumenteerimiseks. See pakub intuitiivset kasutajaliidest skeemide loomisel ja trükkplaatide kujundamisel. On populaarne kuna võimaldab kiiresti luua vooluringide visulaiseeringuid, mis sarnanevad reaalsele riistvarale. Tarkvara on saadaval Windowsi, macOS-i ja Linuxi platvormidele, pakkudes laia ligipääsetavust erinevatele kasutajatele.
+![Fritzingu makettplaadivaade: L293D kiibiga H-sild](meedia/Fritzing.png)
 
-Fritzing toetab kolme peamist töövaadet: makettplaadi vaade *(ingl breadboard view)*, skeemivaade *(ingl schematic view)* ja trükkplaadi vaade *(ingl Printed circuit Board (PCB) view)*. Makettplaadi vaade võimaldab kasutajatel elektroonikakomponente graafiliselt paigutada ja ühendada täpselt nii, nagu see toimuks füüsilisel makettplaadil. Skeemivaade pakub klassikalist joonisskeemi, mis on kasulik loogiliste ühenduste mõistmiseks, ning PCB vaates saab kasutaja disainida trükkplaadi paigutuse, mida on võimalik eksportida tootmiseks. Lisaks on tarkvaras suur komponentide teek, mis sisaldab erinevaid mikrokontrollereid, andureid ja teisi elektroonikakomponente.
+*Ekraanitõmmis Fritzingu tarkvarast: L293D kiibiga H-sild.*
 
-Fritzing on kasulik tööriist nii õppe- kui ka praktiliste elektroonikaprojektide jaoks, kuna see lihtsustab prototüüpide loomist ja dokumenteerimist. Kasutajad saavad oma projekte jagada Fritzingi kogukonnas ning tarkvara toetab ka kohandatud komponentide loomist.
+[Fritzing](https://fritzing.org/) on Windowsis, macOS-is ja Linuxis töötav rakendus elektroonikaprojektide joonistamiseks ning dokumenteerimiseks. Fritzing ei simuleeri vooluahela tööd ega kontrolli, kas valitud pinge, voolutugevus või takisti väärtus on ohutu.
+
+Fritzingu lähtekood on avalik, kuid ametlikult koostatud ja paigaldamiseks valmis versioon on [Fritzingu veebilehel](https://fritzing.org/download/) tasuline allalaadimine. Enne ülesande alustamist tuleb veenduda, et vajalik tarkvara on arvutisse paigaldatud.
+
+Fritzingis on kolm peamist töövaadet:
+
+* **makettplaadivaade** (*Breadboard*) – näitab komponentide füüsilist paigutust ja ühendusjuhtmeid;
+* **skeemivaade** (*Schematic*) – näitab vooluahela elektrilisi ühendusi tingmärkide abil;
+* **trükkplaadivaade** (*PCB*) – võimaldab kavandada trükkplaadi paigutust ja ühendusradasid.
+
+### Soovituslik tööjärjekord
+
+1. Paiguta makettplaadivaates Arduino, makettplaat ja vajalikud komponendid.
+2. Määra komponentidele õiged omadused, näiteks takisti väärtus.
+3. Ühenda komponendid juhtmetega.
+4. Kasuta juhtmete jaoks ühtset värvisüsteemi, näiteks punast toite ja musta või sinist GND jaoks.
+5. Kontrolli skeemivaates, kas elektrilised ühendused vastavad kavandatud vooluahelale.
+6. Lisa joonisele komponentide nimetused ja vajalikud märkused.
+7. Ekspordi valmis joonis PNG- või SVG-failina ning lisa see seadme dokumentatsiooni.
+
+Fritzingu joonis kirjeldab kavandatud ühendusi, kuid enne vooluahela füüsilist koostamist tuleb arvutuste või simulatsiooni abil eraldi kontrollida selle elektrilist sobivust.
 
 ### Abimaterjalid
-* [Kiire õpetus alustamiseks](https://fritzing.org/learning/get-started/)
-* [Kasutajaliidese selgitus](https://fritzing.org/learning/full_reference)
-## Falstad
-![Falstad Circuit Simulator](meedia/Falstad.png)
-*"Ekraanitõmmis Falstad keskkonnast - manuaalsete lülititega H-sild"*
 
-Falstad Circuit Simulator on veebipõhine elektroonikaskeemide simuleerimise tööriist, mis võimaldab kasutajatel luua ja analüüsida vooluringe reaalajas. See keskkond on kasulik nii algajatele kui ka edasijõudnud elektroonikahuvilistele, kuna see pakub visuaalset ja interaktiivset lähenemist. Simulaator on saadaval tasuta ning töötab otse veebibrauseris ilma täiendava tarkvara paigaldamiseta.
+* [Fritzingu alustamisjuhend](https://fritzing.org/learning/get-started/)
+* [Fritzingu kasutajaliidese kirjeldus](https://fritzing.org/learning/full_reference)
 
-Keskkond toetab laia valikut elektroonikakomponente, sealhulgas takisteid, kondensaatoreid, dioode, transistoreid ja isegi programmeeritavaid loogikakomponente. Kasutajad saavad skeeme luua lihtsa lohistamisliidese abil ning näha kohe, kuidas vooluringid toimivad. Simulatsioon kuvab pinge ja voolu muutusi dünaamiliselt, võimaldades visuaalselt jälgida näiteks kondensaatori laadumist ja tühjenemist või ostsillaatori tööd. Lisaks on võimalik kasutada erinevaid mõõtevahendeid, nagu ostsilloskoop, et analüüsida signaalide käitumist.
+## Falstad Circuit Simulator
 
-Falstad Circuit Simulator võimaldab õppijal katsetada ja mõista vooluringide tööpõhimõtteid riskivabalt. Samuti sisaldab keskkond mitmeid eelnevalt eelkoostatud skeeme, mida saab uurida ja kohandada vastavalt vajadusele. Simulaator toetab ka koodipõhist vooluringide kirjeldamist, mis annab edasijõudnutele võimaluse skeeme süvitsi analüüsida ja optimeerida. Tänu lihtsusele ja paindlikkusele sobib see nii hariduslikuks kasutamiseks kui ka kiireks prototüüpimiseks.
+![Falstad Circuit Simulator: käsitsi juhitavate lülititega H-sild](meedia/Falstad.png)
+
+*Ekraanitõmmis Falstad Circuit Simulatorist: käsitsi juhitavate lülititega H-sild.*
+
+[Falstad Circuit Simulator](https://falstad.com/circuit/circuitjs.html) on veebibrauseris töötav vooluahelate simulaator. Sellega saab koostada elektriskeeme ning jälgida komponentide pingeid, voolutugevusi ja võimsusi.
+
+Falstad visualiseerib voolu liikumist ja pinge erinevusi. Simulatsiooni töötamise ajal saab muuta komponentide väärtusi, lülitada lüliteid ning jälgida, kuidas muudatused mõjutavad kogu vooluahelat.
+
+Falstad sobib hästi takistite, dioodide, kondensaatorite ja transistoridega ahelate uurimiseks. See ei ole mõeldud Arduino ühendusjooniste koostamiseks ega Arduino programmide käivitamiseks.
+
+### Soovituslik tööjärjekord
+
+1. Ava Falstad Circuit Simulator.
+2. Vali olemasolev näidisahel või koosta uus skeem.
+3. Lisa vajalikud komponendid ning määra nende väärtused.
+4. Kontrolli, et vooluahel oleks suletud ja sisaldaks pingeallikat.
+5. Käivita simulatsioon.
+6. Vaata komponentide pingeid ja voolutugevusi.
+7. Võrdle simulaatori tulemusi enda arvutustega.
+8. Salvesta või jaga ahelat simulaatori loodud lingi abil.
+
+Simulaatori näidatud tulemused sõltuvad kasutatud komponentide mudelitest. Näiteks simuleeritud LED-i päripinge võib erineda päris LED-i pingest.
 
 ### Abimaterjalid
-* [Keskkonna dokumentatsioon](https://falstad.com/circuit/doc/)
 
-* [Käsiraamat PDF vormingus](https://www.bait-consulting.com/publications/circuit_simulator_manual.pdf)
+* [Falstad Circuit Simulatori ametlik dokumentatsioon](https://falstad.com/circuit/doc/)
 
 ## Tinkercad Circuits
-![Tinkercad circuits](meedia/Tinkercad.png)
-*"Ekraanitõmmis Tinkercad keskkonnad - H-sild L293D kiibi abil koos koodiga"*
 
-Tinkercad Circuits on veebipõhine elektroonika simuleerimise ja prototüüpimise keskkond, mis võimaldab kasutajatel luua ja testida vooluringe interaktiivselt. See on osa Tinkercad platvormist, mida haldab Autodesk. Kuna keskkond töötab otse veebibrauseris, pole vaja täiendavat tarkvara alla laadida.
+![Tinkercad Circuits: Arduino UNO ja L293D kiibiga H-sild](meedia/Tinkercad.png)
 
-Tinkercad Circuits võimaldab kasutajatel lisada ja ühendada erinevaid elektroonikakomponente, sealhulgas takisteid, LED-e, lüliteid, kondensaatoreid ja integraallülitusi. Üks selle võimsamaid funktsioone on Arduino simulaator, mis võimaldab programmeerida ja testida Arduino mikrokontrolleri käitumist otse veebikeskkonnas. Kasutajad saavad kirjutada ja käivitada C++ koodi ning vaadata reaalajas, kuidas nende programm mõjutab vooluringi toimimist. Lisaks sisaldab keskkond ostsilloskoopi ja muid mõõtevahendeid, mis aitavad analüüsida vooluringide elektrilisi omadusi.
+*Ekraanitõmmis Tinkercad Circuitsist: Arduino UNO ja L293D kiibiga H-sild koos programmiga.*
 
-Tinkercad Circuits on ideaalne platvorm elektroonika õppimiseks ja õpetamiseks, kuna see võimaldab kasutajatel turvalises keskkonnas katsetada ja vigadest õppida ilma füüsilise riistvara kahjustamise riskita. Keskkonnas on ka mitmeid eeldefineeritud projekte ja õpetusmaterjale, mis hõlbustavad uute kasutajate sisseelamist. 
+[Tinkercad Circuits](https://www.tinkercad.com/dashboard/designs/circuits) on Autodeski veebikeskkond, milles saab koostada makettplaadi ühendusi, kirjutada Arduino programme ja simuleerida vooluahela tööd. Projektide salvestamiseks on vaja Tinkercadi kasutajakontot.
+
+Tinkercadi Arduino simulaator kasutab Arduino UNO R3 mudelit. Programmi saab koostada tekstina või plokkide abil ning simulatsiooni ajal saab jälgida komponentide käitumist ja kasutada virtuaalseid mõõtevahendeid.
+
+Tinkercad ei sisalda Arduino UNO R4 WiFi mudelit. UNO R3 jaoks koostatud programm ja viikude paigutus sobivad paljudes selle kursuse näidetes ka UNO R4 WiFi jaoks, kuid füüsilise ahela korral tuleb eraldi arvestada UNO R4 WiFi väiksema, 8 mA I/O-viigu voolupiiriga.
+
+### Soovituslik tööjärjekord
+
+1. Logi Tinkercadi sisse ja ava jaotis **Circuits**.
+2. Loo uus vooluahel.
+3. Lisa tööalale Arduino UNO R3, makettplaat ja vajalikud komponendid.
+4. Määra komponentidele õiged väärtused ning ühenda need juhtmetega.
+5. Ava programmiredaktor ja sisesta Arduino programm.
+6. Käivita simulatsioon nupuga **Start Simulation**.
+7. Jälgi vooluahela tööd ning mõõda vajaduse korral pinget, voolutugevust või takistust virtuaalse multimeetriga.
+8. Peata simulatsioon enne ühenduste või komponentide muutmist.
+9. Võrdle simulatsiooni tulemusi enda arvutustega.
+
+Simulatsioon ei asenda komponentide andmelehtede ja Arduino elektriliste piiride kontrollimist. Tinkercadis töötav ühendus võib päris riistvara üle koormata.
 
 ### Abimaterjalid
-* [Kiire õpetus alustamiseks](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits)
-* [Interaktiivne õppematerjal](https://www.tinkercad.com/learn/circuits)
+
+* [Tinkercad Circuitsi alustamisjuhend](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits)
+* [Tinkercad Circuitsi interaktiivsed õppematerjalid](https://www.tinkercad.com/learn/circuits)
+
+---
+
+[Eelmine: multimeetri kasutamine](4_multimeetri_kasutamine.md) · [Sisukord](README.md) · [Järgmine: iseseisvad ülesanded](6_iseseisvad_ülesanded.md)

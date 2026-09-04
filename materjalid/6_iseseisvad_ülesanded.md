@@ -1,56 +1,207 @@
 # Iseseisvad ülesanded
 
-## Skeemi koostamine ja simuleerimine
-Koosta Tinkercad Circuits keskkonnas skeem, kus Arduino UNO digitaalse viiguga 2 ja maandusviigu vahel on jadamisi ühendatud 100 $\Omega$ takisti, ja 3 punast LEDi. Digitaalse viigu 3 ja maandusviigu vahele ühenda paralleelselt 3 punast LEDi koos 100  $\Omega$ takistiga iga LEDi jaoks.
-Sea programmi abil viigud 2 ja 3 väljunditeks ja pane neile pinge 5V.
+Need ülesanded aitavad kontrollida ja kinnistada eelnevates peatükkides õpitut. Arvutusülesannetes esita valemid, arvutuskäik, ühikud ja lõppvastus. Praktilistes ülesannetes lisa ühendusjoonis või skeem ning kirjelda saadud tulemust.
 
-Mida märkad LED-ide heleduse kohta?
+## 1. Jada- ja rööpühenduse võrdlemine
 
-Selgita miks see nii on?
+Koosta Tinkercad Circuitsis kaks vooluahelat. Arduino UNO R3 kasutatakse selles ülesandes ainult 5 V toiteallikana; Arduino programmi ei ole vaja.
 
-[lahendus](https://www.tinkercad.com/things/8zGRN6HQs58-jada-ja-paralleel?sharecode=sUe4epPX7jZkRs-jidc_gn9qJCQEKLKdaaUtXNu6EZ8)
+### Ahel A: jadaühendus
 
-## Võimsuse arvutamine
-Vooluallika pinge on 9V. 
-Kasutaja peab jadamisi ühendatud vooluahelasse lisama 100 $\Omega$ takistust. Kas ta tohib lisada 100 $\Omega$ takisti, mille lubatud maksimumvõimsus on 1/4 W? Põhjenda oma vastust.
+Ühenda Arduino 5 V ja GND vahele jadamisi:
+
+* üks 470 Ω takisti;
+* kaks punast LED-i.
+
+Kontrolli LED-ide polaarsust. LED-i anood ühendatakse 5 V poole ja katood GND poole.
+
+### Ahel B: rööpühendus
+
+Ühenda Arduino 5 V ja GND vahele kaks rööpharu. Mõlemas harus ühenda jadamisi:
+
+* üks 470 Ω takisti;
+* üks punane LED.
+
+Igal LED-il peab olema oma takisti.
+
+### Ülesanne
+
+1. Arvuta enne simulatsiooni mõlema ahela eeldatav voolutugevus. Kasuta punase LED-i ligikaudse päripingena 2 V.
+2. Ennusta, kummas ahelas põlevad LED-id eredamalt.
+3. Käivita simulatsioon ja vaatle LED-ide heledust.
+4. Mõõda virtuaalse multimeetriga:
+   * jadaahela voolutugevus;
+   * kummagi rööpharu voolutugevus;
+   * rööpahela koguvool.
+5. Võrdle mõõdetud tulemusi enda arvutustega.
+6. Selgita:
+   * miks on jadaahela LED-id rööpahela LED-idest erineva heledusega;
+   * miks vajab rööpahela iga LED eraldi takistit;
+   * mis juhtub teise LED-iga, kui üks rööpharu katkestada.
+
+Esita tulemused tabelina:
+
+| Mõõdetav suurus | Arvutatud väärtus | Simulatsioonis mõõdetud väärtus |
+|---|---:|---:|
+| Jadaahela voolutugevus |  |  |
+| Esimese rööpharu voolutugevus |  |  |
+| Teise rööpharu voolutugevus |  |  |
+| Rööpühenduse koguvool |  |  |
+
+Pärast simulatsioonis kontrollimist võib sama vooluahela õpetaja loal füüsiliselt koostada.
+
+## 2. Takisti võimsuse valimine
+
+100 Ω takisti ühendatakse otse 9 V alalisvooluallikaga.
+
+1. Arvuta takistit läbiv voolutugevus.
+2. Arvuta takistis hajuv võimsus.
+3. Kontrolli tulemust kahe erineva valemiga:
+
+   $$P = U \cdot I$$
+
+   $$P = \frac{U^2}{R}$$
+4. Kas selles ahelas võib kasutada 0,25 W nimivõimsusega takistit? Põhjenda vastust.
+5. Millise nimivõimsusega takisti valiksid, kui ahel peab töötama pikemat aega? Arvesta, et takistit ei ole soovitatav kasutada pidevalt selle suurima lubatud võimsuse piiril.
 
 [Lahendus](meedia/vastus1.md)
 
-## Voolutugevuse arvutamine
-Leia millise tugevusega vool läbib takisteid $R_1, R_2$ ja $R_3$ (iga takisti kohta eraldi).
+## 3. Voolutugevuse arvutamine segavooluahelas
 
-$R_1$ = 330 $\Omega$
+Joonisel on takisti $R_1$ ühendatud jadamisi rööpühendusega, mille moodustavad takistid $R_2$ ja $R_3$.
 
-$R_2$ = 220 $\Omega$
+**Antud:**
 
-$R_3$ = 100 $\Omega$
+* $R_1 = 330\ \Omega$
+* $R_2 = 220\ \Omega$
+* $R_3 = 100\ \Omega$
+* $U = 5\ \mathrm{V}$
 
-$U_{battery} = 5 V$
+![Jada- ja rööpühendust sisaldav kolme takistiga vooluahel](meedia/skeem1.png)
 
-![Vooluskeem](meedia/skeem1.png)
+Leia:
 
-[Abi ülesande lahendamiseks](https://www.youtube.com/watch?v=CRN5VQ86s94)
+1. takistite $R_2$ ja $R_3$ rööpühenduse kogutakistus;
+2. kogu vooluahela kogutakistus;
+3. takistit $R_1$ läbiv voolutugevus;
+4. takistile $R_1$ langev pinge;
+5. rööpühendusele langev pinge;
+6. takistit $R_2$ läbiv voolutugevus;
+7. takistit $R_3$ läbiv voolutugevus.
 
-## Tulemuste kontrollimine simulatsiooni abil
+Kontrolli, et rööpharude voolutugevuste summa võrduks takistit $R_1$ läbiva voolutugevusega:
 
-Loo joonisel kujutatud vooluring Falstad Circuit veebikeskkonnas. Kontrolli, kas simulaatori poolt arvutatud väärtused kinnitavad sinu saadud tulemusi.
+$$I_1 = I_2 + I_3$$
 
-[Lahendus](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3EFsFEbNN1Z8whKOJpUkVGdARsATiDR5wYleBSqq2XIuX4DqjbrFUUafQPOHr-bGeSQ2AdyG81Rz87cbexww0fLxNBINd+QVMvaOCTB3c+WIieJMFU+zM2IA)
+Esita kõik arvutuskäigud ja vastused sobivate ühikutega.
 
-## Seadme dokumenteerimine ja loomine
+[Ingliskeelne abivideo jada-rööpahela arvutamise kohta](https://www.youtube.com/watch?v=CRN5VQ86s94)
 
-Eesmärgiks on luua seade, mida saab eraldi nupust sisse/välja lülitada. Seade näitab sisselülitatuna potentsiomeetri asendit neljas vahemikus kasutades selleks LEDe.
+[Lahendus](meedia/vastus2.md)
 
-* Pane kirja funktsionaalsed nõuded loodavale seadmele
-* Pane kirja süsteemi füüsiliste komponentide loetelu
-* Joonista valmis seadme skeem Fritzing tarkvaras
-* Loo seade Arduino Uno abil päriselt
+## 4. Arvutuste kontrollimine simulatsiooniga
 
-Edasijõudnutele:
-* Modifitseeri loodud seadet nii, et potentsiomeetri nelja erineva asendi asemel näitaksid LEDid neljakümmet erinevat asendit.
+Koosta eelmises ülesandes kujutatud vooluahel Falstad Circuit Simulatoris.
 
-[Potentsiomeetri kasutamise õpetus](https://docs.arduino.cc/learn/electronics/potentiometer-basics/)
+Kasuta järgmisi väärtusi:
 
-[map funktsiooni kasutamise õpetus](https://docs.arduino.cc/language-reference/en/functions/math/map/)
+* pingeallikas: 5 V;
+* $R_1 = 330\ \Omega$;
+* $R_2 = 220\ \Omega$;
+* $R_3 = 100\ \Omega$.
 
-[lahendus](https://www.tinkercad.com/things/ewlL0WmmW1u-neli-vahemikku?sharecode=fR5GdkA1JgncdNHTXewElXwrDL9GFkoGNkQaUZNIk9s)
+### Ülesanne
+
+1. Koosta skeem nii, et $R_1$ oleks jadamisi takistite $R_2$ ja $R_3$ rööpühendusega.
+2. Käivita simulatsioon.
+3. Kontrolli simulaatori abil:
+   * kogu vooluahela voolutugevust;
+   * takistit $R_1$ läbivat voolutugevust;
+   * takistit $R_2$ läbivat voolutugevust;
+   * takistit $R_3$ läbivat voolutugevust;
+   * takistile $R_1$ langevat pinget;
+   * rööpühendusele langevat pinget.
+4. Võrdle simulaatori näite eelmises ülesandes saadud arvutustega.
+5. Kontrolli, et rööpharude voolude summa võrduks takistit $R_1$ läbiva vooluga.
+6. Selgita lühidalt, miks võivad ümardatud arvutustulemused simulaatori näitudest veidi erineda.
+
+Esita tulemused tabelina:
+
+| Mõõdetav suurus | Arvutatud väärtus | Simulaatori väärtus |
+|---|---:|---:|
+| $I_1$ |  |  |
+| $I_2$ |  |  |
+| $I_3$ |  |  |
+| $U_1$ |  |  |
+| $U_{23}$ |  |  |
+
+[Lahendus Falstad Circuit Simulatoris](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgA3EFsFEbNN1Z8whKOJpUkVGdARsATiDR5wYleBSqq2XIuX4DqjbrFUUafQPOHr-bGeSQ2AdyG81Rz87cbexww0fLxNBINd+QVMvaOCTB3c+WIieJMFU+zM2IA)
+
+## 5. Potentsiomeetri asendi näidik
+
+Loo Arduino UNO abil seade, mis näitab potentsiomeetri asendit nelja LED-iga. Seadet saab surunupu abil sisse ja välja lülitada.
+
+### Vajalikud komponendid
+
+* Arduino UNO R3 või Arduino UNO R4 WiFi;
+* makettplaat;
+* neli LED-i;
+* neli 470 Ω takistit;
+* üks 10 kΩ lineaarne potentsiomeeter;
+* üks surunupp;
+* ühendusjuhtmed.
+
+### Ühendused
+
+* Ühenda potentsiomeetri äärmised jalad 5 V ja GND viiguga ning keskmine jalg analoogsisendiga A0.
+* Ühenda neli LED-i eraldi 470 Ω takistite kaudu digitaalviikudega D2, D3, D4 ja D5.
+* Ühenda iga LED-i katood GND-ga.
+* Ühenda surunupp digitaalviigu D7 ja GND vahele. Kasuta programmis viigu D7 jaoks sisemist tõmbetakistit `INPUT_PULLUP`.
+
+### Funktsionaalsed nõuded
+
+1. Arduino käivitumisel on seade välja lülitatud ja kõik LED-id on kustunud.
+2. Üks nupuvajutus lülitab seadme sisse.
+3. Järgmine nupuvajutus lülitab seadme välja.
+4. Ühe füüsilise nupuvajutuse kohta tohib seadme olek muutuda ainult üks kord. Programmis tuleb arvestada nupu kontaktide võnkumisega.
+5. Kui seade on välja lülitatud, peavad kõik LED-id olema kustunud.
+6. Kui seade on sisse lülitatud, näitavad LED-id potentsiomeetri asendit tulpnäiduna:
+   * väärtusel 0–255 põleb üks LED;
+   * väärtusel 256–511 põleb kaks LED-i;
+   * väärtusel 512–767 põleb kolm LED-i;
+   * väärtusel 768–1023 põlevad kõik neli LED-i.
+7. Lahendus peab töötama nii Arduino UNO R3 kui ka UNO R4 WiFi plaadiga.
+
+### Töö etapid
+
+1. Pane kirja seadme funktsionaalsed nõuded.
+2. Koosta kasutatavate komponentide ja nende väärtuste loetelu.
+3. Koosta seadme ühendusjoonis Fritzingis. Märgi joonisele viigud ja takistite väärtused.
+4. Kirjuta kommenteeritud Arduino programm.
+5. Kontrolli ühendust ja programmi Tinkercad Circuitsis. Tinkercadis kasuta Arduino UNO R3 plaati.
+6. Lase õpetajal ühendusjoonis üle kontrollida.
+7. Koosta seade füüsiliselt Arduino UNO R3 või UNO R4 WiFi abil.
+8. Katseta kõiki nelja potentsiomeetri vahemikku ning seadme sisse- ja väljalülitamist.
+9. Dokumenteeri katsetamise tulemused.
+
+### Edasijõudnutele
+
+Muuda programmi nii, et neli LED-i näitaksid potentsiomeetri asendit kahendarvuna vahemikus 0–15. Näiteks:
+
+* 0 = 0000;
+* 5 = 0101;
+* 10 = 1010;
+* 15 = 1111.
+
+Jaga potentsiomeetri analoogväärtused kuueteistkümneks vahemikuks ja kuva vastava vahemiku number LED-idel kahendkujul.
+
+### Abimaterjalid
+
+* [Potentsiomeetri kasutamise õpetus](https://docs.arduino.cc/learn/electronics/potentiometer-basics/)
+* [`map()`-funktsiooni kasutamise õpetus](https://docs.arduino.cc/language-reference/en/functions/math/map/)
+
+[Näidislahendus](meedia/vastus3.md)
+
+---
+
+[Eelmine: skeemide koostamine ja simuleerimine](5_skeemide_koostamine_ja_simuleerimine.md) · [Sisukord](README.md)
